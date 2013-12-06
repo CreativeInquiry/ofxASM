@@ -1,7 +1,7 @@
 ofxASM
 ======
 
-2013 [Dan Wilcox](http://danomatika.com)
+2013 [Dan Wilcox](http://danomatika.com) 
 for the CMU [Studio for Creative Inquiry](http://studioforcreativeinquiry.org)
 
 an [OpenFrameworks](http://openframeworks.cc)  wrapper around [asmlib-opencv](https://code.google.com/p/asmlib-opencv), a library for [Active Shape Models](https://en.wikipedia.org/wiki/Active_shape_model)
