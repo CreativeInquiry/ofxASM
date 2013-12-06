@@ -40,7 +40,7 @@ PCA * ModelFile::readPCA(PCA * &p)
 {
     int i, j;
     p = new PCA();
-    int rows, cols;
+    int rows = 0, cols = 0;
     readInt(rows);
     readInt(cols);
     p->eigenvectors = Mat_<double>::zeros(rows, cols);

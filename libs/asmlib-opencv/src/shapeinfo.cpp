@@ -35,7 +35,7 @@ void ShapeInfo::readFromFile(ModelFile &f){
 }
 
 Mat ShapeInfo::drawMarkPointsOnImg(
-  Mat& img, const vector< Point >& vP, bool drawInPlace) const
+  Mat& img, const vector< cv::Point >& vP, bool drawInPlace) const
 {
     Mat mb;
     if (drawInPlace)

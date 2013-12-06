@@ -12,7 +12,7 @@ using cv::Point_;
 using cv::Mat_;
 using cv::Mat;
 using cv::imread;
-using cv::Size;
+//using cv::Size;
 
 namespace StatModel {
 

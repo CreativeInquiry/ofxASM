@@ -359,7 +359,7 @@ void ShapeModel::viewShapeModelUpdate(ModelViewInfo *pInfo)
     s.loadTrainImage(Mat_<unsigned char>::ones(190*2, 160*2)*255);
     projectParamToShape(paramV, s.shapeVec);
     SimilarityTrans st = s.shapeVec.getShapeTransformFitingSize(
-                            Size(320, 380));
+                            cv::Size(320, 380));
     s.buildFromShapeVec(st);
     img = s.show(0, -1, false);
     imshow("Viewing Shape Model", img);

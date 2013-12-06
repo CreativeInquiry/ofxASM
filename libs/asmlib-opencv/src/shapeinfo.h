@@ -6,7 +6,7 @@
 #include "shapevec.h"
 
 using cv::Mat;
-using cv::Point;
+//using cv::Point;
 using std::vector;
 
 namespace StatModel {
@@ -57,7 +57,7 @@ public:
 
     //! Draw a list of points on an image.
     Mat drawMarkPointsOnImg(
-      Mat &img, const vector< Point > &vP, bool drawInPlace = false) const;
+      Mat &img, const vector< cv::Point > &vP, bool drawInPlace = false) const;
 };
 } // Namespace
 #endif

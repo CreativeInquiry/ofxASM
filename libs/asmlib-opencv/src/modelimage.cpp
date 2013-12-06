@@ -2,6 +2,8 @@
 #include "afreader.h"
 using std::cerr;
 
+#include "ofxCv.h"
+
 namespace StatModel {
 
 ModelImage::ModelImage()
@@ -15,7 +17,7 @@ bool ModelImage::readPTS( const char * filename )
     AFReader r(filename);
 
     if ( !r.IsValid() ) {
-        printf("File %s not found!\n");
+        printf("File %s not found!\n", filename);
         throw "";
         return false;
     }
@@ -77,12 +79,15 @@ void ModelImage::initPointsByVector(const std::vector< cv::Point2i >& V)
 bool ModelImage::loadTrainImage()
 {
     if (!imgLoaded){
-        Mat img = imread(this->hostImageName);
-        if (img.empty()) {
+		// replace highgui stuff with OF/ofxCv
+        //Mat img = imread(this->hostImageName);
+		//if (img.empty()) {
+		ofImage img;
+        if (!img.loadImage(this->hostImageName)) {
             cerr << "(EE) Loading image " + this->hostImageName + " failed!" << endl;
             throw;
         }
-        loadTrainImage(img);
+        loadTrainImage(ofxCv::toCv(img));
     }
     return imgLoaded;
 }
@@ -279,11 +284,11 @@ Mat ModelImage::show(int l, int pId, bool showInWin, int highLight)
                        1, CV_AA);
     }
     if (showInWin){
-        cvNamedWindow("hoho", CV_WINDOW_AUTOSIZE);
-        cv::imshow("hoho", mb);
-
-        printf("Press any key to continue...\n");
-        cv::waitKey();
+//        cvNamedWindow("hoho", CV_WINDOW_AUTOSIZE);
+//        cv::imshow("hoho", mb);
+//
+//        printf("Press any key to continue...\n");
+//        cv::waitKey();
     }
     return mb;
 }

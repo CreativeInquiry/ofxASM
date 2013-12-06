@@ -218,7 +218,7 @@ ASMFitResult ASMModel::fit(const cv::Mat& img, int verbose)
     // Resize the image to proper size
     double ratio;
     ratio = sqrt( double(40000) / (grayImg.rows * grayImg.cols));
-    cv::resize(grayImg, resizedImg, Size(grayImg.cols*ratio, grayImg.rows*ratio));
+    cv::resize(grayImg, resizedImg, cv::Size(grayImg.cols*ratio, grayImg.rows*ratio));
 
     ModelImage curSearch;
     curSearch.setShapeInfo( &shapeInfo );
